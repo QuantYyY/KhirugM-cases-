@@ -27,7 +27,7 @@ btt.onclick = function() {
         // НАЧАЛО ПРОВЕРОК НА ПРИНАДЛЕЖНОСТЬ 
             switch(lastChar){
                 case 'а':                                       // Женский род 1 склонение с буквой А
-                                                     
+                       vremStr = val.slice(0, -1);                              
                        if(provFirstChar()){                     // проверка на О ИЛИ ОБ  
 
                             writer("ы","е","у","ой","е");
@@ -37,7 +37,7 @@ btt.onclick = function() {
                 break;
 
                 case 'я': // Мужской род 1 склонение с буквой Я
-                        
+                vremStr = val.slice(0, -1);
                         if(provFirstChar()){
 
                             writer("и","е","ю","ей","е");
@@ -50,7 +50,7 @@ btt.onclick = function() {
                 break;
 
                 case 'е': // Средний род 2 склонение с буквой Е
-                        
+                vremStr = val.slice(0, -1);
                         if(provFirstChar()){
 
                             writer("я","ю","е","ем","е");
@@ -64,7 +64,7 @@ btt.onclick = function() {
                 break;
 
                 case 'о': // Средний род 2 склонение с буквой О
-                        
+                vremStr = val.slice(0, -1);
                         if(provFirstChar()){
 
                             writer("а","у","о","ом","е");
@@ -77,7 +77,7 @@ btt.onclick = function() {
                 break;
 
                 case 'ь': // 3 склонение женский род с буквой Ь  ИЛИ 2 склонение мужского рода с Ь
-                    
+                vremStr = val.slice(0, -1);
                         if(provFirstChar() && provShipSogl() && provRodaSlova()){            // Женский род + 3 склонение с окончанием на Ь(в предложном падеже ОБ) 
 
                             writer("и","и","ь","ью","и");
@@ -130,7 +130,7 @@ btt.onclick = function() {
             switch(twoLastChar){
                 
                 case 'ия':                   // -ия 
-                
+                vremStr = val.slice(0, -1);
                     if(provFirstChar){
                         writer("и","е","ю","ей","е"); 
                     } else {
@@ -139,7 +139,7 @@ btt.onclick = function() {
                 break;
 
                 case 'ий':                   //  -ий
-                    
+                vremStr = val.slice(0, -1);
                     if(provFirstChar){
                         writer("я","ю","я","ем","е");
                     } else {
@@ -183,7 +183,7 @@ btt.onclick = function() {
     // ДЛЯ ОБЫЧНЫХ
 
     function writer(x,y,z,a,b){
-        vremStr = val.slice(0, -1);             // удаление не нужного символа
+        // vremStr = val.slice(0, -1);             // удаление не нужного символа
         document.getElementById('1').innerHTML="Именительный падеж: "+val;
         document.getElementById('2').innerHTML="Родительный падеж: "+vremStr+x;
         document.getElementById('3').innerHTML="Дательный падеж: "+vremStr+y;
@@ -193,7 +193,7 @@ btt.onclick = function() {
     }
     
     function writer2(x,y,z,a,b){
-        vremStr = val.slice(0, -1);             // удаление не нужного символа
+        // vremStr = val.slice(0, -1);             // удаление не нужного символа
         document.getElementById('1').innerHTML="Именительный падеж: "+val;
         document.getElementById('2').innerHTML="Родительный падеж: "+vremStr+x;
         document.getElementById('3').innerHTML="Дательный падеж: "+vremStr+y;
